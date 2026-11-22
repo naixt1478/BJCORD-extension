@@ -2,7 +2,7 @@
   "name": "bjcord",
   "description": "디스코드에 방금 푼 문제를 전송해 보세요!",
   "private": true,
-  "version": "2.1.0",
+  "version": "2.1.1",
   "type": "module",
   "scripts": {
     "dev": "wxt",
@@ -12,6 +12,7 @@
     "zip": "wxt zip",
     "zip:firefox": "wxt zip -b firefox",
     "compile": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
     "postinstall": "wxt prepare"
   },
   "dependencies": {

@@ -21,7 +21,9 @@ export default defineConfig({
     },
     permissions: ["storage"],
     host_permissions: [
+      "https://acmicpc.net/*",
       "https://www.acmicpc.net/*",
+      "https://solvedac.ssafy.today/api/v4/*",
       "https://solved.ac/api/v3/*",
     ],
   }),

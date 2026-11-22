@@ -1,8 +1,9 @@
 import { getHandle, watchJudgementChange } from "@/lib/boj";
+import { isMyProblemStatusPage } from "@/lib/boj-parser";
 import { getLogger } from "@/lib/logger";
 
 export default defineContentScript({
-  matches: ["https://www.acmicpc.net/*"],
+  matches: ["https://acmicpc.net/*", "https://www.acmicpc.net/*"],
   async main(ctx) {
     const logger = getLogger("content");
 
@@ -17,11 +18,7 @@ export default defineContentScript({
 
     logger.log("Handle:", handle);
 
-    if (
-      ["status", `user_id=${handle}`, "problem_id", "from_mine=1"].every(
-        (key) => url.includes(key)
-      )
-    ) {
+    if (isMyProblemStatusPage(url, handle)) {
       // Main Content Script
       logger.log("Starting...");
       await watchJudgementChange(ctx, logger);

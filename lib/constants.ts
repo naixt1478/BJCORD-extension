@@ -15,13 +15,46 @@ export const DEFAULT_TIER_SELECTION_END = 30; // Ruby I
 export const DEFAULT_TIER_SELECTOR_START = DEFAULT_TIER_SELECTION_START;
 export const DEFAULT_TIER_SELECTOR_END = DEFAULT_TIER_SELECTION_END;
 
+export const BOJ_ORIGIN = "https://acmicpc.net";
+export const SOLVED_V4_PROXY_URL = "https://solvedac.ssafy.today/api/v4";
+export const SOLVED_V3_API_URL = "https://solved.ac/api/v3";
+export const SOLVED_TAG_CACHE_KEY = "solvedV4TagCache";
+export const SOLVED_TAG_CACHE_TTL_MS = 24 * 60 * 60 * 1000;
+
 export const HANDLE_QUERY = "a.username";
+export const HANDLE_META_QUERY = 'meta[name="username"]';
 export const AC_TITLE_TOOLTIP_QUERY = "a.problem_title.tooltip-click.result-ac";
 export const RESULT_TABLE_ID = "status-table";
 export const SUBMISSION_TIME_QUERY = "a.show-date";
 export const PROBLEM_ID_QUERY = "a.problem_title";
 
 export const WATCH_JUDGEMENT_INTERVAL = 100;
+export const PENDING_RESULT_CATEGORIES = [
+  "wait",
+  "rejudge-wait",
+  "compile",
+  "judging",
+] as const;
+export const BOJ_RESULT_COLORS = [
+  "wait",
+  "rejudge-wait",
+  "compile",
+  "judging",
+  "ac",
+  "pe",
+  "wa",
+  "tle",
+  "mle",
+  "ole",
+  "rte",
+  "ce",
+  "del",
+  "del",
+  "compile",
+  "pac",
+  "judging",
+] as const;
+
 export const HEADER_PROBLEM_ID = "problemId";
 export const HEADER_LEVEL = "level";
 export const HEADER_RESULT = "result";
@@ -33,6 +66,7 @@ export const HEADER_SUBMISSION_TIME = "submissionTime";
 export const HEADER_RUNTIME = "runtime";
 export const HEADER_MEMORY = "memory";
 export const HEADER_CODE_LENGTH = "codeLength";
+export const HEADER_JUDGE_SERVER = "judgeServer";
 
 export const TIER_NAME: Record<number, string> = {
   0: "Unrated",

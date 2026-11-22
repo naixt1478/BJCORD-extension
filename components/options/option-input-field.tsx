@@ -57,7 +57,7 @@ export default function OptionInputField({
       setShowEmoji(await getShowEmoji());
       setOnlyFirstSolve(await getSendFirstAcOnly());
     })();
-  });
+  }, []);
 
   const toggleShowEmoji = async () => {
     setShowEmoji((prev) => !prev);
